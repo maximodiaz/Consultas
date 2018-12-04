@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="periodentitis.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="acceso">
+    <Key>
+      <PropertyRef Name="ID_acceso" />
+    </Key>
+    <Property Name="ID_acceso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuario" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="contraseña" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="perfil" Type="nvarchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="paciente">
+    <Key>
+      <PropertyRef Name="Cedula" />
+    </Key>
+    <Property Name="Cedula" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="75" Nullable="false" />
+    <Property Name="Apellido" Type="nvarchar" MaxLength="75" Nullable="false" />
+    <Property Name="Fecha_Nacimiento" Type="date" Nullable="false" />
+    <Property Name="Tipo_Sangre" Type="nchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="ID_Usuario" />
+    </Key>
+    <Property Name="ID_Usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="Apellido" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="Cedula" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="125" Nullable="false" />
+    <Property Name="Telefono" Type="int" Nullable="false" />
+    <Property Name="Perfil" Type="nvarchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="periodentitisStoreContainer">
+    <EntitySet Name="acceso" EntityType="Self.acceso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="paciente" EntityType="Self.paciente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<h2>Ingreso</h2>
+
+<form action="Login/Ingreso" method="post">
+
+    <div class="form-group">
+        <label>Usuario</label>
+        <input type="text" class="form-control" name="usuario" placeholder="Usuario">
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" name="password" placeholder="Password">
+    </div>
+
+    <div class="form-group">
+        <label for="Seleccion"> Perfil</label>
+        <div class="col-md-10">
+            <select name="Perfil">
+                <option value="seleccione...">Seleccione...</option>
+                <option value="Doctor">Doctor</option>
+                <option value="Asistente">Asistente</option>
+            </select>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
